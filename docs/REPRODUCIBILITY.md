@@ -189,6 +189,12 @@ Archivo utilizado:
 
 El archivo proporciona las anotaciones neuronales empleadas para seleccionar las poblaciones ORN, ALPN, KC, APL y MBON.
 
+La versión de las anotaciones se identificó como **v3.1.0** mediante coincidencia exacta del identificador Git del archivo local y del archivo oficial `supplemental_files/Supplemental_file1_neuron_annotations.tsv` bajo la etiqueta `v3.1.0`.
+
+Identificador Git: `afea3e15a5671f5da0b9f7dd2e932d328c3b57a0`.
+
+SHA-256 local: `9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be`.
+
 ### Cadena de procesamiento del presente estudio
 
 1. Obtención de archivos de conectividad y anotaciones identificados como versión 783.
@@ -201,7 +207,7 @@ El archivo proporciona las anotaciones neuronales empleadas para seleccionar las
 Las fuentes de descarga se identificaron mediante el historial del proyecto y la documentación del modelo cerebral.
 
 Todavía está pendiente verificar:
-- Las revisiones o commits exactos de los repositorios fuente.
+- La revisión o commit exacto de los archivos de conectividad distribuidos por Shiu y colaboradores. La versión de las anotaciones FlyWire ya se identificó como v3.1.0 mediante coincidencia del identificador Git.
 - Los hashes de los archivos descargados frente a copias publicadas.
 - Las transformaciones anteriores a la distribución de `Connectivity_783.parquet`.
 - Las condiciones de licencia, atribución y redistribución de cada conjunto de datos.
