@@ -1,0 +1,53 @@
+{
+  "study": "MBON_to_KC_multistimulus_validation",
+  "parent_protocol": "results/APL_MBON_KC_seed_validation_protocol.json",
+  "status": "defined_before_new_stimulus_runs",
+  "lesion_seed": 1,
+  "stimuli": [
+    "ORN_DA1",
+    "ORN_DA2",
+    "ORN_DC4",
+    "ORN_DL5",
+    "ORN_DM1",
+    "ORN_DP1l",
+    "ORN_VL2a",
+    "ORN_VM4"
+  ],
+  "simulation_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "conditions": [
+    "G_intact",
+    "H_intact",
+    "G_MBON_KC_blocked",
+    "H_MBON_KC_blocked"
+  ],
+  "checkpoint": "results/P1I_functional_validation/functional_checkpoints/weights_eta0.030_cycle20.npz",
+  "checkpoint_array": "weights_before_update_mV",
+  "plasticity_eta": 0.03,
+  "plasticity_cycle": 20,
+  "apl_to_kc_blocked": true,
+  "apl_to_alpn_blocked": true,
+  "apl_to_mbon_blocked": false,
+  "primary_metric": "sum_abs_H_minus_G_KC_rates",
+  "primary_contrast": "blocked_minus_intact_absolute_KC_difference",
+  "analysis": "descriptive_per_stimulus_and_across_stimuli",
+  "existing_stimulus": "ORN_DM1",
+  "planned_total_runs": 320,
+  "new_runs_required": 280,
+  "limitations": [
+    "single_lesion_identity",
+    "fixed_learned_weights",
+    "simulation_seeds_not_independent_connectomes",
+    "no_functional_recovery_inference"
+  ]
+}

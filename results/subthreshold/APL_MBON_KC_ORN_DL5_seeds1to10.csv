@@ -1,0 +1,11 @@
+simulation_seed,active_KC_G,active_MBON_G,intact_abs_KC_Hz,blocked_abs_KC_Hz,blocked_minus_intact_Hz,relative_change_pct,changed_KC_intact,changed_KC_blocked,changed_MBON_intact,changed_MBON_blocked
+1,25,0,0.0,0.0,0.0,NA,0,0,0,0
+2,24,0,0.0,0.0,0.0,NA,0,0,0,0
+3,23,0,0.0,0.0,0.0,NA,0,0,0,0
+4,23,0,0.0,0.0,0.0,NA,0,0,0,0
+5,24,0,0.0,0.0,0.0,NA,0,0,0,0
+6,23,0,0.0,0.0,0.0,NA,0,0,0,0
+7,23,0,0.0,0.0,0.0,NA,0,0,0,0
+8,25,0,0.0,0.0,0.0,NA,0,0,0,0
+9,24,0,0.0,0.0,0.0,NA,0,0,0,0
+10,23,0,0.0,0.0,0.0,NA,0,0,0,0

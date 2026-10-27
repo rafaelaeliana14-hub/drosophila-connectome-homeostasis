@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv*/
+.pytest_cache/
+
+# Local configuration and credentials
+.env
+.env.*
+*.pem
+*.key
+
+# Temporary files
+*.log
+*.tmp
+.ipynb_checkpoints/
+
+# FlyWire-derived anatomical data: pending license review
+data/flywire783/
+data/mb_subcircuit/
+
+# Large voltage traces: planned for separate archival deposit
+results/P1I_MBON_voltage_ORN_DL5_seed*.npz

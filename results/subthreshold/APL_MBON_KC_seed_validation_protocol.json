@@ -1,0 +1,55 @@
+{
+  "study": "MBON_to_KC_pathway_sensitivity",
+  "status": "protocol_defined_before_seeds_3_to_10",
+  "lesion_seed": 1,
+  "stimulus": "ORN_DM1",
+  "simulation_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "plasticity_eta": 0.03,
+  "plasticity_cycle": 20,
+  "checkpoint": "results/P1I_functional_validation/functional_checkpoints/weights_eta0.030_cycle20.npz",
+  "checkpoint_array": "weights_before_update_mV",
+  "conditions": [
+    "G_intact",
+    "H_intact",
+    "G_MBON_KC_blocked",
+    "H_MBON_KC_blocked"
+  ],
+  "apl_to_kc_blocked": true,
+  "apl_to_alpn_blocked": true,
+  "apl_to_mbon_blocked": false,
+  "primary_metric": "sum_abs_H_minus_G_KC_rates",
+  "secondary_metrics": [
+    "number_of_changed_KC",
+    "number_of_changed_MBON",
+    "signed_mean_KC_difference"
+  ],
+  "primary_contrast": "blocked_minus_intact_absolute_KC_difference",
+  "analysis": "descriptive_across_simulation_seeds",
+  "limitations": [
+    "single_lesion_identity",
+    "single_stimulus",
+    "fixed_learned_weights",
+    "no_functional_recovery_inference"
+  ],
+  "existing_results": {
+    "seed_1": {
+      "intact": 192.0,
+      "blocked": 120.0
+    },
+    "seed_2": {
+      "intact": 128.0,
+      "blocked": 168.0
+    }
+  }
+}
