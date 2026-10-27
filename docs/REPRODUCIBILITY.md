@@ -106,3 +106,58 @@ Por tanto, la regeneración integral del modelo a partir de los datos conectómi
 El repositorio permanece privado durante la preparación del material.
 
 No se ha realizado todavía un depósito público definitivo de datos ni se ha asignado un DOI a este conjunto de reproducción.
+
+## 9. Construcción del subcircuito conectómico
+
+El script `build_mb_subcircuit.py` construye el subcircuito a partir de archivos asociados a la versión 783 del conectoma y sus anotaciones.
+
+### Dependencias de entrada
+
+- `data/flywire783/neuron_annotations_v783.tsv`: anotaciones neuronales.
+- `../brain-model/Connectivity_783.parquet`: conectividad dirigida y número de contactos.
+- `../brain-model/Completeness_783.csv`: archivo cargado por el script, pero no utilizado posteriormente para filtrar neuronas o conexiones.
+
+Las rutas son relativas a la ubicación del script. Los archivos fuente no están incluidos actualmente en el repositorio remoto.
+
+### Selección de poblaciones
+
+Se utilizan los siguientes criterios sobre las anotaciones:
+
+- ORN: `cell_class == "olfactory"`
+- ALPN: `cell_class == "ALPN"`
+- KC: `cell_class == "Kenyon_Cell"`
+- APL: `cell_type == "APL"`
+- MBON: `cell_class == "MBON"`
+
+Solo se conservan las neuronas cuyo `root_id` aparece como `Presynaptic_ID` o `Postsynaptic_ID` en el archivo de conectividad.
+
+### Selección de conexiones
+
+Se conservan únicamente las filas en que ambos identificadores, presináptico y postsináptico, pertenecen al conjunto neuronal seleccionado.
+
+Se mantienen las direcciones originales de las conexiones.
+
+El número de filas se informa como pares conectados, mientras que la suma de la columna `Connectivity` proporciona el número de contactos sinápticos.
+
+La unicidad de los pares dirigidos se verificó sobre mb_connectivity_intact.parquet: 460086 filas, 460086 pares presináptico-postsináptico únicos, 0 duplicados y 1486479 contactos sinápticos. Esta comprobación corresponde al archivo derivado conservado localmente.
+
+### Resúmenes generados
+
+El script produce:
+
+- `data/mb_subcircuit/mb_neurons_intact.parquet`
+- `data/mb_subcircuit/mb_connectivity_intact.parquet`
+- `data/mb_subcircuit/mb_connectivity_summary.csv`
+- `data/mb_subcircuit/mb_neurotransmitters_summary.csv`
+
+El resumen de conectividad agrupa pares, contactos y números de neuronas presinápticas y postsinápticas por combinación dirigida de poblaciones.
+
+El resumen de neurotransmisores contabiliza la anotación `top_nt` por población; no constituye una validación fisiológica de la identidad funcional de las sinapsis.
+
+### Conteos del subcircuito utilizado
+
+- Neuronas: 8239.
+- Filas de conectividad dirigida: 460086.
+- Contactos sinápticos: 1486479.
+
+Estos conteos corresponden a la construcción utilizada previamente en el proyecto y no se han regenerado durante esta auditoría.
