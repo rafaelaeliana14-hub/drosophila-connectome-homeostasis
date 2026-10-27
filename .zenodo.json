@@ -1,0 +1,19 @@
+{
+  "title": "Drosophila Connectome Homeostasis: Connectome-Constrained P1-I Computational Model",
+  "creators": [
+    {
+      "name": "Gajardo Venegas, Rafaela",
+      "affiliation": "Universidad de Talca, Chile"
+    }
+  ],
+  "description": "Reproducibility resources and simulation code for a connectome-constrained computational investigation of local plasticity and network-level responses to neuronal silencing in the Drosophila melanogaster mushroom body.",
+  "keywords": [
+    "Drosophila melanogaster",
+    "connectomics",
+    "computational neuroscience",
+    "mushroom body",
+    "neural plasticity",
+    "network robustness"
+  ],
+  "upload_type": "software"
+}
