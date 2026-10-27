@@ -207,9 +207,7 @@ SHA-256 local: `9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be
 Las fuentes de descarga se identificaron mediante el historial del proyecto y la documentación del modelo cerebral.
 
 Todavía está pendiente verificar:
-- La revisión o commit exacto de los archivos de conectividad distribuidos por Shiu y colaboradores. La versión de las anotaciones FlyWire ya se identificó como v3.1.0 mediante coincidencia del identificador Git.
-- Los hashes de los archivos descargados frente a copias publicadas.
-- Las transformaciones anteriores a la distribución de `Connectivity_783.parquet`.
+- Las transformaciones realizadas sobre los datos sinápticos primarios antes de distribuir `Connectivity_783.parquet`. La identidad de los tres archivos fuente ya fue comprobada; `Completeness_783.csv` coincide tras normalizar los saltos de línea.
 - Las condiciones de licencia, atribución y redistribución de cada conjunto de datos.
 
 Por tanto, se identifica la procedencia de descarga, pero todavía no se afirma una trazabilidad completa hasta los datos sinápticos primarios.
@@ -243,3 +241,47 @@ Las condiciones de atribución y redistribución de los archivos conectómicos y
 Los archivos anatómicos derivados permanecen excluidos del seguimiento de Git durante esta revisión.
 
 No se ha establecido todavía una licencia general para el repositorio.
+
+## 12. Verificación de integridad de la conectividad fuente
+
+El archivo local `Connectivity_783.parquet` fue comparado con el publicado en el repositorio `philshiu/Drosophila_brain_model`.
+
+Repositorio:
+https://github.com/philshiu/Drosophila_brain_model
+
+Commit de referencia:
+`91bdd1e7dcf193f3e7ca5a8933497fcef63b7960`
+
+Archivo:
+`Connectivity_783.parquet`
+
+Identificador Git:
+`d386555d1a5f40ebfa1380bcb05b1fab044855fd`
+
+La comparación confirmó una coincidencia exacta entre el archivo local y el archivo publicado en ese commit.
+
+Referencia fija:
+https://github.com/philshiu/Drosophila_brain_model/blob/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Connectivity_783.parquet
+
+Esta verificación establece la identidad del archivo distribuido, pero no documenta las transformaciones que realizaron sus autores para obtenerlo a partir de los datos sinápticos primarios.
+
+Las condiciones de redistribución de los datos conectómicos continúan sujetas a revisión.
+
+## 13. Verificación de Completeness_783.csv
+
+El archivo local `Completeness_783.csv` se comparó con el archivo oficial del repositorio `philshiu/Drosophila_brain_model`, en el commit `91bdd1e7dcf193f3e7ca5a8933497fcef63b7960`.
+
+Identificador Git local:
+`7bdf251b81e857b19f2cf664eeb2e31ba614151f`
+
+Identificador Git oficial:
+`b5a26b82b69a3c2e7fd99cd6810c36fc8f0e492b`
+
+Ambos archivos contienen 138.640 líneas. La copia local utiliza terminaciones CRLF y la oficial utiliza LF.
+
+La comparación binaria después de normalizar CRLF a LF confirmó igualdad exacta (`True`). Por tanto, la diferencia entre los identificadores Git se explica por el formato de los saltos de línea y no por diferencias en el contenido normalizado.
+
+Los archivos originales no fueron modificados durante la verificación.
+
+Referencia fija:
+https://github.com/philshiu/Drosophila_brain_model/blob/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv
