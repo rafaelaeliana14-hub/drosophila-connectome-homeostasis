@@ -161,3 +161,51 @@ El resumen de neurotransmisores contabiliza la anotación `top_nt` por població
 - Contactos sinápticos: 1486479.
 
 Estos conteos corresponden a la construcción utilizada previamente en el proyecto y no se han regenerado durante esta auditoría.
+
+## 10. Procedencia de los archivos conectómicos
+
+### Fuentes de descarga identificadas
+
+Según el historial de preparación del proyecto del 20 de septiembre de 2026, los archivos de entrada se obtuvieron de las siguientes fuentes:
+
+**Modelo cerebral de Shiu y colaboradores**
+
+Repositorio:
+https://github.com/philshiu/Drosophila_brain_model
+
+Archivos:
+- `Connectivity_783.parquet`
+- `Completeness_783.csv`
+
+El README de este proyecto distingue entre FlyWire v630, utilizado en su artículo original, y la configuración alternativa para la versión pública 783.
+
+**Anotaciones neuronales de FlyWire**
+
+Repositorio:
+https://github.com/flyconnectome/flywire_annotations
+
+Archivo utilizado:
+- `neuron_annotations_v783.tsv`
+
+El archivo proporciona las anotaciones neuronales empleadas para seleccionar las poblaciones ORN, ALPN, KC, APL y MBON.
+
+### Cadena de procesamiento del presente estudio
+
+1. Obtención de archivos de conectividad y anotaciones identificados como versión 783.
+2. Selección de las poblaciones neuronales mediante `build_mb_subcircuit.py`.
+3. Extracción de conexiones dirigidas cuyos extremos pertenecen al subcircuito.
+4. Construcción del modelo computacional P1-I y sus experimentos de lesión y plasticidad.
+
+### Limitaciones de procedencia
+
+Las fuentes de descarga se identificaron mediante el historial del proyecto y la documentación del modelo cerebral.
+
+Todavía está pendiente verificar:
+- Las revisiones o commits exactos de los repositorios fuente.
+- Los hashes de los archivos descargados frente a copias publicadas.
+- Las transformaciones anteriores a la distribución de `Connectivity_783.parquet`.
+- Las condiciones de licencia, atribución y redistribución de cada conjunto de datos.
+
+Por tanto, se identifica la procedencia de descarga, pero todavía no se afirma una trazabilidad completa hasta los datos sinápticos primarios.
+
+Los archivos anatómicos derivados permanecen excluidos de Git mientras se completa esta revisión.
