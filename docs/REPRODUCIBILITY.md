@@ -209,3 +209,31 @@ Todavía está pendiente verificar:
 Por tanto, se identifica la procedencia de descarga, pero todavía no se afirma una trazabilidad completa hasta los datos sinápticos primarios.
 
 Los archivos anatómicos derivados permanecen excluidos de Git mientras se completa esta revisión.
+
+## 11. Licencias y atribuciones
+
+### Software de referencia
+
+El proyecto Drosophila Brain Model de Philip Shiu y Nico Spiller incluye una licencia MIT con copyright de 2023.
+
+Se conserva una copia íntegra de ese aviso en:
+
+`LICENSES/Shiu-Spiller-MIT.txt`
+
+La identidad del archivo fue comprobada mediante SHA-256.
+
+Esta licencia permite utilizar, modificar y redistribuir el software cubierto por ella, conservando los avisos correspondientes.
+
+### Alcance de la atribución
+
+La inclusión del aviso MIT reconoce la procedencia del software de referencia. No implica que todos los archivos del presente repositorio sean adaptaciones de ese software ni que todo el repositorio esté licenciado automáticamente bajo MIT.
+
+La identificación precisa de componentes propios y componentes derivados continúa pendiente.
+
+### Datos conectómicos
+
+Las condiciones de atribución y redistribución de los archivos conectómicos y anotaciones FlyWire v783 deben evaluarse por separado.
+
+Los archivos anatómicos derivados permanecen excluidos del seguimiento de Git durante esta revisión.
+
+No se ha establecido todavía una licencia general para el repositorio.
